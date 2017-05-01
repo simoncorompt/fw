@@ -1,0 +1,85 @@
+@import "~config/styles"
+
+.component.song-player
+
+  display flex
+  flex-direction row
+  align-items center
+
+  .button
+    display flex
+    align-items center
+    justify-content center
+    position relative
+    width 100px
+    height 100px
+    cursor pointer
+
+    .circle
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      margin auto
+      border-radius 100%
+      background white
+
+      &.outer
+        width 100%
+        height 100%
+        opacity .08
+
+      &.middle
+        width 75%
+        height 75%
+        opacity .08
+
+      &.inner
+        display flex
+        align-items center
+        justify-content center
+        width 50%
+        height 50%
+        background rgba(255, 255, 255, .12)
+
+        .play-icon, .pause-icon
+          position absolute
+          top 0
+          right 0
+          bottom 0
+          left 0
+          margin auto
+          display block
+          width 8px
+          height auto
+
+        .play-icon
+          transform translateX(1px)
+
+        .pause-icon
+          opacity 0
+
+  .play-bar
+    position relative
+    height 1px
+    width calc(100% - 100px)
+    transform translateX(-26px)
+    background #3e3e3e
+    cursor pointer
+
+    .info
+      position absolute
+      bottom 6px
+      left 30px
+
+      span
+        display block
+        width 100%
+        color white
+
+    .progress
+      position absolute
+      height 100%
+      width 0%
+      background white

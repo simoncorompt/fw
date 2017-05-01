@@ -1,0 +1,40 @@
+@import "~config/styles"
+
+.component.slider
+  position relative
+  width 114%
+  padding-bottom 74%
+
+  .cover
+    display none
+
+  &.mobile
+    width 100%
+    padding-bottom 0
+
+    .slider-wrapper
+      display none
+
+    .cover
+      display block
+
+    .img-wrapper
+      position relative
+
+  .slides-wrapper, .slide
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    overflow hidden
+    background-color $gallery-gray
+
+  .slide
+    &:not(.current)
+      visibility hidden
+
+    .mask, .img
+      position absolute
+      width 100%
+      height 100%

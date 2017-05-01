@@ -1,0 +1,8 @@
+{
+  "preprod": {
+	"host": "",
+	"username": "",
+	"password": "",
+	"path": ""
+  }
+}

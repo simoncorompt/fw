@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FW</title>
+  <meta name="fragment" content="!">
+  <link rel="icon" type="image/png" href="{path}assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="{path}assets/img/apple-touch-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Hind|Montserrat:700,900" rel="stylesheet">
+  <meta property="og:title" content="FW">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://domain.com/">
+  <meta property="og:image" content="http://domain.com/assets/img/share.jpg">
+  <meta property="og:description" content="FW">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<style>
+  body, html {
+    padding: 0;
+    margin: 0;
+    background: black;
+  }
+</style>
+<div id="container"></div>
+<script type="text/javascript">
+  (function (d, w) {
+    w.config = {
+      path: '{path}',
+      locales: ['en'],
+      locale: 'en',
+      env: '{env}'
+    };
+    var s = ['{path}js/main.js'], js, i = 0;
+    (!('Promise' in window) || !('pushState' in history)) && s.unshift('{path}js/polyfill.js');
+    (function l() {
+      js = d.createElement('script');
+      js.onload = i < s.length - 1 ? l : null;
+      js.src = s[i++];
+      d.body.appendChild(js);
+    })();
+  })(document, window);
+</script>
+
+</body>
+</html>

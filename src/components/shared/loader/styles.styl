@@ -1,0 +1,204 @@
+@import "~config/styles"
+
+.component.loader
+  z-index 200
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+
+  .not-found-wrapper
+    z-index 1000
+    display flex
+    align-items center
+    justify-content center
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    opacity 0
+    pointer-events none
+    transition opacity 800ms ease-in-out
+
+    &.visible
+      opacity 1
+
+    h4
+      width 90%
+      max-width 360px
+      margin auto
+      color white
+      line-height 1.3
+      text-align center
+      transform translateY(150%)
+
+  .video-wrapper
+    position absolute
+    display flex
+    align-items center
+    justify-content center
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background black
+
+  .logo
+    z-index 30
+    width 20%
+    height auto
+    opacity 0
+
+    &.not-found
+      cursor pointer
+
+    +break(xs)
+      width 45%
+
+  .loader
+    z-index 100
+    position absolute
+    top 0
+    left 0
+    width 10px
+    height 100%
+    background #666666
+    transform translateX(-100%)
+    transition opacity 800ms ease-in-out
+
+    &.hidden
+      opacity 0
+
+    .scroll-indicator
+      position absolute
+      top 50%
+      left 50px
+      display flex
+      flex-direction row
+      align-items center
+      color white
+      nav-link()
+      transform translateY(-50%)
+      font-size rem(19px)
+
+      +break(xs)
+        top 65%
+        left 50vw
+        transform translateX(-50%)
+        flex-direction column
+        font-size rem(16px)
+
+      +break(xl)
+        font-size rem(19px)
+
+      .line
+        height 2px
+        width 36px
+        background white
+        margin-right 10px
+
+        +break(xs)
+          margin-bottom 30px
+          margin-right 0
+          transform rotate(90deg)
+
+      .text
+        position relative
+        overflow hidden
+
+        span
+          opacity 0
+
+      .layer
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background white
+
+    .bar
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 0
+      background $mine-shaft-gray
+      overflow hidden
+
+
+  .transition-layer
+    z-index 200
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background $mine-shaft-gray
+    transform translateX(-100%)
+    overflow hidden
+
+    .wrapper-quote
+      position absolute
+      display flex
+      flex-direction row
+      align-items center
+      justify-content center
+      box-sizing border-box
+      top 0
+      left 0
+      width 100%
+      height 100%
+
+      .line-wrapper
+        position relative
+        display block
+        height 2px
+        width 80%
+        overflow hidden
+
+      .line
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background white
+
+
+      .quote
+        color white
+
+        +break(xs)
+          font-size rem(40px)
+          max-width 60%
+
+
+  .video-pattern
+    z-index 1
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background url($imgPath + 'video-pattern.png')
+    background-size 8px
+    background-repeat repeat
+
+  video, .gif-loop
+    position fixed
+    top 50%
+    left 50%
+    min-width 100%
+    min-height 100%
+    width auto
+    height auto
+    z-index 0
+    transform-origin center center
+    transform translateX(-50%) translateY(-50%)
+    background-size cover
+
+  .gif-loop
+    transform rotate(90deg) translateX(-50%) translateY(-50%)

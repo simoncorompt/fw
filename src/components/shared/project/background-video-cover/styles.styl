@@ -1,0 +1,41 @@
+@import "~config/styles"
+
+.component.background-video-cover
+  z-index 0
+  position absolute
+  width 100vw
+  height 100%
+  background-color black
+
+  .video-pattern
+    z-index 4
+    position fixed
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background url($imgPath + 'video-pattern.png')
+    background-repeat repeat
+
+  .video-wrapper
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+
+  video, .gif-cover
+    position fixed
+    top 50%
+    left 50%
+    min-width 100%
+    min-height 100%
+    width auto
+    height auto
+    z-index 0
+    opacity 1
+    transform translateX(-50%) translateY(-50%)
+    background-size cover
+
+    &.videoNav
+      z-index 40

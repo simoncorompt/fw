@@ -1,0 +1,48 @@
+@import "~config/styles"
+
+.component.lazyload
+  .wrapper
+    width 500px
+    margin 0 auto
+    padding 0 2%
+
+  .lazyLoad
+    position relative
+    width 100%
+    background-color: #ccc
+    margin-bottom 5%
+    overflow: hidden
+    padding-top 100%
+
+  .lazyLoad img,
+  .lazyLoad video,
+  .lazyLoad iframe
+    position absolute
+    top 0
+    left 0
+    right 0
+    bottom 0
+    width 100%
+    height auto
+
+    will-change opacity, transform
+
+    opacity 0
+    transition opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1)
+    transform scale3d(1.025, 1.025, 1.025)
+
+  .lazyLoad.show img,
+  .lazyLoad.show video,
+  .lazyLoad.show iframe
+    opacity 1
+    transform scale3d(1, 1, 1)
+
+  .lazyLoad iframe
+    outline none
+    border none
+    height 100%
+
+  @media screen and (max-width: 500px)
+    .wrapper
+      width 100%
+

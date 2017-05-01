@@ -1,0 +1,21 @@
+@import "~config/styles"
+
+.component.project-content
+  position absolute
+  height 100%
+  width 100%
+  overflow hidden
+
+  +break(xs)
+    right 0
+    width calc(100% - 30px)
+
+  .scrolling-content
+    position absolute
+
+  .spacer
+    padding 500vh 0 400vh 0
+
+  .project-content-wrapper
+    position relative
+    width 100%

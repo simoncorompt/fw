@@ -1,0 +1,91 @@
+@import "~config/styles"
+
+.component.video-player
+  z-index 100
+  position relative
+  width 100%
+
+  .play-button
+    pointer-events auto
+    z-index 20
+    display flex
+    align-items center
+    justify-content center
+    position absolute
+    top 50%
+    transform translate(-50%, -50%)
+    width 80px
+    height 80px
+    cursor pointer
+
+    +break(xs)
+      left 50%
+
+    .translucent, .flat
+      border-radius 100%
+
+    .translucent
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+      opacity .5
+
+    .flat
+      display flex
+      align-items center
+      justify-content center
+      position absolute
+      top 0
+      right 0
+      bottom 0
+      left 0
+      margin auto
+      width 70%
+      height 70%
+
+      .play-icon, .pause-icon
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        margin auto
+        display block
+        width 8px
+        height auto
+
+      .play-icon
+        transform translateX(1px)
+
+      .pause-icon
+        opacity 0
+
+  .video-wrapper
+    position relative
+    width 100%
+    padding-bottom 57%
+    overflow hidden
+    background $gallery-gray
+
+    .cover, .gif
+      z-index 10
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 100%
+
+    video
+      z-index 5
+      position absolute
+      top 50%
+      left 50%
+      min-width 101%
+      min-height 101%
+      width 100%
+      height auto
+      z-index 0
+      transform translateX(-50%) translateY(-50%)
+      background-size cover

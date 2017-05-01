@@ -1,0 +1,99 @@
+@import "~config/styles"
+
+html, body
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  color #000
+  background $white
+  overflow hidden
+  font-size 100%
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td
+  margin 0
+  padding 0
+
+table
+  border-collapse collapse
+  border-spacing 0
+
+fieldset, img
+  border 0
+
+address, caption, cite, code, dfn, em, strong, th, var
+  font-style normal
+  font-weight normal
+
+ol, ul
+  list-style none
+
+caption, th
+  text-align left
+
+h1, h2, h3, h4, h5, h6
+  font-size 100%
+  font-weight normal
+
+qbefore, qafter
+  content ''
+
+abbr, acronym
+  border 0
+  font-variant normal
+
+sup
+  vertical-align text-top
+
+sub
+  vertical-align text-bottom
+
+input, textarea, select
+  font-family inherit
+  font-size inherit
+  font-weight inherit
+  *font-size 100%
+
+legend
+  color #000
+
+#yui3-css-stamp.cssreset
+  display none
+
+#container
+  position relative
+  left 0
+  top 0
+  width 100%
+  height 100%
+
+.component.app
+  position absolute
+  top 0
+  left 0
+  height 100%
+  width 100%
+  font($hind, 14px, 400, normal)
+
+  > div.page-wrapper
+    position absolute
+    height 100%
+    width 100%
+    overflow hidden
+
+  .page
+    padding 200px 0
+
+  .wrapper
+    width 90%
+    margin auto
+
+  h2
+    title()
+    margin-bottom 90px
+
+  p
+    text()
+    max-width 700px
+    margin-bottom 40px

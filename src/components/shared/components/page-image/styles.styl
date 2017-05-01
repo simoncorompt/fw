@@ -1,0 +1,32 @@
+@import "~config/styles"
+
+.component.page-image
+  position relative
+  width 100%
+
+  .content
+    position relative
+
+    .align-wrapper
+      z-index 10
+      position relative
+      left 40px
+      margin-top 40px
+      width calc(100% - 40px)
+
+    .background-layer
+      z-index 0
+      position absolute
+      top 0
+      left 0
+      height 100%
+      width calc(100% + 40px)
+      background $block-background
+
+  .overflow-layer
+    position absolute
+    width 114%
+    height 55%
+    left 0
+    bottom 0
+    background $block-background

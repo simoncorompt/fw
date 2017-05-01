@@ -1,0 +1,50 @@
+@import "~config/styles"
+
+.component.video-loop
+  position relative
+  width 100%
+  overflow hidden
+
+  &.overflow
+    width 114%
+
+    .video-wrapper
+      width 100%
+      padding-bottom 56%
+
+      video
+        width 100%
+        height auto
+
+  &.side-overflow
+    width 114%
+
+    .video-wrapper
+      padding-bottom 120%
+
+  .video-wrapper
+    position relative
+    width 100%
+    padding-bottom 120%
+    background $gallery-gray
+    -webkit-mask-image radial-gradient(white, black)
+
+    .load-layer
+      position absolute
+      top -1%
+      left 0
+      width 100%
+      height 102%
+
+  video
+    position absolute
+    top 50%
+    left 50%
+    min-width 101%
+    min-height 101%
+    width auto
+    height 100%
+    z-index 0
+    margin 0 auto
+    transform translateX(-50%) translateY(-50%)
+    background-size cover

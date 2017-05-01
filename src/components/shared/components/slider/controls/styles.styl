@@ -1,0 +1,77 @@
+@import "~config/styles"
+
+.component.controls
+  z-index 10
+  display flex
+  flex-direction row
+  position absolute
+  top 50%
+  transform translate(-40%, -50%)
+  width 100px
+  height 45px
+
+  +break(xs)
+    left 0
+    transform-origin center center
+    transform translate(-50%, -50%) rotate(90deg)
+
+  .button
+    display flex
+    align-items center
+    justify-content center
+    width 50%
+    height 100%
+    background gray
+    cursor pointer
+
+    &.prev
+      border-radius 100% 0 0 100%
+
+    &.next
+      border-radius 0 100% 100% 0
+
+    .arrow
+      display block
+      position relative
+      width 10px
+      height 10px
+      opacity 1
+      margin 0
+
+      .line-mask
+        display block
+        position absolute
+        top 50%
+        width 10px
+        height 2px
+        backface-visibility hidden
+        overflow hidden
+
+        .line
+          position absolute
+          top 0
+          left 0
+          width 100%
+          height 100%
+          background white
+
+      &.right
+        transform translateX(4px)
+
+        .line-mask
+          &.top
+            transform translateY(-4px) rotate(45deg)
+
+          &.bottom
+            transform translateY(2px) rotate(-45deg)
+
+
+      &.left
+        transform translateX(-4px)
+
+        .line-mask
+          &.top
+            transform translateY(-4px) rotate(-45deg)
+
+          &.bottom
+            transform translateY(2px) rotate(45deg)

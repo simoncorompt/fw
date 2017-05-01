@@ -1,0 +1,23 @@
+@import "~config/styles"
+
+.component.image
+  position relative
+  width 100%
+
+  &.overflow
+    width 114%
+
+  .img-wrapper
+    position relative
+    width 100%
+    padding-bottom 50%
+    background $gallery-gray
+    -webkit-mask-image radial-gradient(white, black)
+
+  .img
+    z-index 5
+    display block
+    position absolute
+    width 100%
+    height auto
+    transform-origin top center

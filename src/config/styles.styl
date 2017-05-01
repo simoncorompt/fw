@@ -1,0 +1,112 @@
+//-----------------------------------------------------> Paths
+
+$path = '/'
+$prod = 'portfolio2k17/assets/img/'
+$local = 'assets/img/'
+$imgPath = $path + $prod
+
+//-----------------------------------------------------> Colors
+// Use names from http://chir.ag/projects/name-that-color/
+
+$mine-shaft-gray = #282727
+$white = #FFFFFF
+
+//-----------------------------------------------------> Color target
+
+// GLOBAL
+$title = $white
+$text = $white
+
+//-----------------------------------------------------> Font-family
+
+// Bold (700) + Black (900)
+$montserrat = 'Montserrat', 'Helvetica', sans-serif
+
+// Regular (400)
+$hind = 'Hind', 'Helvetica', sans-serif
+
+//-----------------------------------------------------> Fonts mixins
+
+title()
+  font($montserrat, rem(90px), 900, normal)
+  line-height 1
+  color $title
+
+text()
+  font($hind, rem(14px), 400, normal)
+  line-height 1.4
+  color $title
+
+
+
+
+
+
+//-----------------------------------------------------> Responsive
+
+// Be careful when adding new breakpoints as those are in sync
+// with the bootstrap grid system...
+media_queries = {
+  xs  : "screen and (max-width: 768px)",
+  sm  : "screen and (min-width: 768px)",
+  md  : "screen and (min-width: 992px)",
+  lg : "screen and (min-width: 1200px)",
+  xl : "screen and (min-width: 1800px)"
+}
+
+break(breakpoints)
+  conditions = ()
+  for breakpoint in breakpoints
+    push(conditions, media_queries[breakpoint])
+  conditions = join(", ", conditions)
+  @media conditions
+    {block}
+
+//-----------------------------------------------------> Font
+
+font($fontFamily, $fontSize, $fontWeight, $fontStyle)
+  font-family $fontFamily
+  font-size $fontSize
+  font-style $fontStyle
+  font-weight $fontWeight
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+rem(value) {
+  u = unit(value);
+  if (u is 'px') {
+    return unit(value / 16, 'rem');
+  } else {
+    return unit(value, u);
+  }
+}
+
+//-----------------------------------------------------> Eases
+
+$linear = cubic-bezier(.250, .250, .750, .750)
+$easeInQuad = cubic-bezier(.550, .085, .680, .530)
+$easeInCubic = cubic-bezier(.550, .055, .675, .190)
+$easeInQuart = cubic-bezier(.895, .030, .685, .220)
+$easeInQuint = cubic-bezier(.755, .050, .855, .060)
+$easeInSine = cubic-bezier(.470, .000, .745, .715)
+$easeInExpo = cubic-bezier(.950, .050, .795, .035)
+$easeInCirc = cubic-bezier(.600, .040, .980, .335)
+$easeInBack = cubic-bezier(.600, 0, .735, .045)
+
+$easeOutQuad = cubic-bezier(.250, .460, .450, .940)
+$easeOutCubic = cubic-bezier(.215, .610, .355, 1.000)
+$easeOutQuart = cubic-bezier(.165, .840, .440, 1.000)
+$easeOutQuint = cubic-bezier(.230, 1.000, .320, 1.000)
+$easeOutSine = cubic-bezier(.390, .575, .565, 1.000)
+$easeOutExpo = cubic-bezier(.190, 1.000, .220, 1.000)
+$easeOutCirc = cubic-bezier(.075, .820, .165, 1.000)
+$easeOutBack = cubic-bezier(.175, .885, .320, 1)
+
+$easeInOutQuad = cubic-bezier(.455, .030, .515, .955)
+$easeInOutCubic = cubic-bezier(.645, .045, .355, 1.000)
+$easeInOutQuart = cubic-bezier(.770, .000, .175, 1.000)
+$easeInOutQuint = cubic-bezier(.860, .000, .070, 1.000)
+$easeInOutSine = cubic-bezier(.445, .050, .550, .950)
+$easeInOutExpo = cubic-bezier(1.000, .000, .000, 1.000)
+$easeInOutCirc = cubic-bezier(.785, .135, .150, .860)
+$easeInOutBack = cubic-bezier(.680, 0, .265, 1)

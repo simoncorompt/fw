@@ -1,0 +1,28 @@
+@import "~config/styles"
+
+.component.line
+  position relative
+  height 100%
+  opacity .08
+
+  .left-lines, .right-lines
+    position absolute
+    width 2px
+    height 100%
+
+    .line
+      position absolute
+      width 1px
+      height 100%
+
+      &.clear
+        left 0
+
+      &.dark
+        right 0
+
+  .left-lines
+    left -1px
+
+  .right-lines
+    right -1px

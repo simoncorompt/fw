@@ -1,0 +1,90 @@
+@import "~config/styles"
+
+.component.slider-device
+  position relative
+  width 114%
+  padding-bottom 74%
+
+  .cover
+    display none
+
+  &.mobile
+    width 100%
+    padding-bottom 0
+
+    .slider-wrapper
+      display none
+
+    .cover
+      display block
+
+      .img-wrapper
+        position relative
+
+  .layer
+    z-index 40
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+
+  .controls
+    z-index 50
+
+  .device-wrapper
+    z-index 10
+    position absolute
+    top 10%
+    left 50%
+    transform translateX(-50%)
+    width 60%
+    padding-bottom 42.35%
+    perspective 400px
+
+  .ipad-device
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background url($imgPath + 'ipad-device.png')
+    background-repeat no-repeat
+    background-size cover
+
+  .slides-wrapper, .img-wrapper, .slide
+    position absolute
+    top 0
+    left 0
+    width 100%
+    height 100%
+    -webkit-mask-image radial-gradient(white, black)
+    background-color $gallery-gray
+    overflow hidden
+
+  .slide
+
+    &:not(.current)
+      visibility hidden
+
+    .mask
+      position absolute
+      top 14%
+      left 50%
+      width 49.5%
+      height 100%
+      transform translateX(-50%)
+
+    .page
+      z-index 1
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height auto
+
+    .img
+      position absolute
+      top 0
+      left 0
+      width 100%

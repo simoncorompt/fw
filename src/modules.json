@@ -1,0 +1,5 @@
+{
+  "home": "components/pages/home",
+  "about": "components/pages/about",
+  "notfound": "components/pages/notfound"
+}
